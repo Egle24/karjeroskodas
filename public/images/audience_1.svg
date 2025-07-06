@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 237.22 237.22">
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <circle cx="118.61" cy="118.61" r="114.11" fill="#110f6f" stroke="#110f6f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="9"/>
+        <g>
+          <g>
+            <path d="M203.19,156.3H132.41c0-29.2,15.84-52.86,35.39-52.86S203.19,127.1,203.19,156.3Z" fill="#fff" stroke="#110f6f" stroke-miterlimit="10" stroke-width="4"/>
+            <circle cx="167.8" cy="80.46" r="17.93" fill="#fff" stroke="#110f6f" stroke-miterlimit="10" stroke-width="4"/>
+          </g>
+          <g>
+            <path d="M104.81,156.3H34c0-29.2,15.84-52.86,35.39-52.86S104.81,127.1,104.81,156.3Z" fill="#fff" stroke="#110f6f" stroke-miterlimit="10" stroke-width="4"/>
+            <circle cx="69.42" cy="80.46" r="17.93" fill="#fff" stroke="#110f6f" stroke-miterlimit="10" stroke-width="4"/>
+          </g>
+          <g>
+            <path d="M152.94,174.68H82.16c0-29.19,15.84-52.85,35.39-52.85S152.94,145.49,152.94,174.68Z" fill="#fff" stroke="#110f6f" stroke-miterlimit="10" stroke-width="4"/>
+            <circle cx="117.55" cy="98.84" r="17.93" fill="#fff" stroke="#110f6f" stroke-miterlimit="10" stroke-width="4"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

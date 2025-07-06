@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 237.22 237.22">
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <circle cx="118.61" cy="118.61" r="114.11" fill="#110f6f" stroke="#110f6f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="9"/>
+        <g>
+          <rect x="69.09" y="58.95" width="99.03" height="119.32" rx="8.71" fill="#fff"/>
+          <g>
+            <g>
+              <polyline points="96.62 83.11 87.69 92.03 82.11 86.45" fill="none" stroke="#110f6f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+              <polyline points="96.69 114.34 87.77 123.27 82.18 117.69" fill="none" stroke="#110f6f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+              <polyline points="96.69 145.18 87.77 154.11 82.18 148.53" fill="none" stroke="#110f6f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+            </g>
+            <line x1="108.44" y1="88.84" x2="155.11" y2="88.84" fill="none" stroke="#110f6f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+            <line x1="108.44" y1="119.68" x2="155.11" y2="119.68" fill="none" stroke="#110f6f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+            <line x1="108.44" y1="149.72" x2="155.11" y2="149.72" fill="none" stroke="#110f6f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

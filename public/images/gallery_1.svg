@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 237.22 237.22">
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <circle cx="118.61" cy="118.61" r="114.11" fill="#110f6f" stroke="#110f6f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="9"/>
+        <rect x="79.96" y="75.08" width="101.94" height="74.38" rx="3.5" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="6"/>
+        <circle cx="106.49" cy="99.71" r="11.17" fill="#ff6a00" stroke="#ff6a00" stroke-miterlimit="10" stroke-width="0.5"/>
+        <path d="M83.38,134.27l21.46-14a4.37,4.37,0,0,1,4.82,0l19.22,12.75a4.4,4.4,0,0,0,5.47-.5l29.79-28.5a4.39,4.39,0,0,1,6.16.08l9.29,9.34a4.48,4.48,0,0,1,1.31,3.17v27.44a4.45,4.45,0,0,1-4.43,4.47H85.77a4.45,4.45,0,0,1-4.42-4.47V138A4.51,4.51,0,0,1,83.38,134.27Z" fill="#fff"/>
+        <rect x="68.55" y="84.83" width="101.94" height="74.38" rx="3.5" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="6"/>
+        <path d="M72,144l21.55-14a4.41,4.41,0,0,1,4.84,0l19.3,12.74a4.42,4.42,0,0,0,5.49-.49l29.91-28.5a4.42,4.42,0,0,1,6.19.08l9.33,9.34a4.47,4.47,0,0,1,1.31,3.16v27.45a4.46,4.46,0,0,1-4.44,4.47H74.38a4.46,4.46,0,0,1-4.44-4.47v-6.09A4.47,4.47,0,0,1,72,144Z" fill="#fff"/>
+        <circle cx="95.08" cy="109.45" r="11.17" fill="#ff6a00" stroke="#ff6a00" stroke-miterlimit="10" stroke-width="0.5"/>
+        <rect x="54.86" y="94.04" width="101.94" height="74.38" rx="3.5" fill="#110f6f" stroke="#fff" stroke-miterlimit="10" stroke-width="6"/>
+        <path d="M57.93,153.23l21.56-14a4.42,4.42,0,0,1,4.85,0L103.64,152a4.41,4.41,0,0,0,5.49-.49L139.07,123a4.41,4.41,0,0,1,6.18.08l9.34,9.34a4.47,4.47,0,0,1,1.31,3.16v27.45a4.46,4.46,0,0,1-4.45,4.47H60.34a4.45,4.45,0,0,1-4.44-4.47V157A4.46,4.46,0,0,1,57.93,153.23Z" fill="#fff"/>
+        <circle cx="74.4" cy="113.66" r="11.17" fill="#fff" stroke="#ff6a00" stroke-miterlimit="10" stroke-width="0.5"/>
+      </g>
+    </g>
+  </g>
+</svg>
