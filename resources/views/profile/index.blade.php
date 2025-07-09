@@ -26,6 +26,15 @@
                                     {{ session('error') }}
                                 </div>
                             @endif
+                            @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul class="mb-0">
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                             <h3 class="card-title">{{ auth()->user()->name }} {{ auth()->user()->surname }}</h3>
                             <div class="bigCircle">
                                 @if (auth()->user()->profile_image)
@@ -252,6 +261,9 @@
                         <div class="row g-2">
                             <form action="{{ route('profile.updateImage') }}" method="post" enctype="multipart/form-data">
                                 @csrf
+                                <!-- Display validation errors -->
+                                
+
                                 <div class="col-md-12">
                                     <label for="profile_image" class="form-label">Pasirinkite nuotrauką</label>
                                     <input type="file" class="form-control" id="profile_image" name="profile_image" accept="image/*" required>
