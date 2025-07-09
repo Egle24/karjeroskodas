@@ -98,7 +98,7 @@
                                             <div class="bigSquare">
                                                 @if ($camp->main_image)
                                                     <img class="adminCampImage preview-image"
-                                                         src="{{ asset('storage/camp_images/' . $camp->main_image) }}"
+                                                         src="{{ asset('storage/' . $camp->main_image) }}"
                                                          alt="Camp image">
                                                 @else
                                                     <div class="avatar-placeholder">
