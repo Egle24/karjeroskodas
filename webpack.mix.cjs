@@ -18,3 +18,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
 if (mix.inProduction()) {
     mix.version();
 }
+
+mix.options({
+  sourcemaps: false
+});
