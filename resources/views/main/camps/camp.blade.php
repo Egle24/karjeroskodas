@@ -28,7 +28,7 @@
             <div class="col-lg-8">
                 <h2>Stovyklos aprašymas</h2>
                  <p class="pb-3">{{ $camp->description }}</p>
-                <img src="{{ asset('images/karjeros-kodas-stovykla-4.jpg')}}" alt="campImage" class="image-in-container">
+                <img src="{{asset('storage/camp_images/' . $camp->main_image) }}" alt="campImage" class="image-in-container">
             </div>
             <div class="col-lg-4 camp-right-column">
                 <div class="event_imp_info_card">
