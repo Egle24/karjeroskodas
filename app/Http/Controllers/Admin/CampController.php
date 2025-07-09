@@ -79,31 +79,32 @@ class CampController extends Controller
             'status' => $request->input('status')
         ]);
 
-        $manager = new ImageManager(new Driver());
-
-        $image = $manager->read($image->getPathname());
-
-        if ($image->width() > 2000) {
-            $image->resize(2000, null, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            });
+        if ($request->hasFile('main_image')) {
+            $imageFile = $request->file('main_image');
+        
+            $manager = new ImageManager(new Driver());
+            $image = $manager->read($imageFile->getPathname());
+        
+            if ($image->width() > 2000) {
+                $image->resize(2000, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                });
+            }
+        
+            $imageName = $camp->title . '.webp';
+            $counter = 1;
+        
+            while (Storage::disk('public')->exists('camp_images/' . $imageName)) {
+                $imageName = $camp->title . '-' . $counter . '.webp';
+                $counter++;
+            }
+        
+            Storage::disk('public')->put('camp_images/' . $imageName, (string) $image->toWebp());
+        
+            $camp->main_image = $imageName;
+            $camp->save();
         }
-
-
-        $imageName = $camp->title . '.webp';
-        $counter = 1;
-
-        // Ensure unique filename
-        while (Storage::disk('public')->exists('camp_images/' . $imageName)) {
-            $imageName = $camp->title . '-' . $counter . '.webp';
-            $counter++;
-        }
-
-        // Save image as WebP in storage/app/public/camp_images
-        Storage::disk('public')->put('camp_images/' . $imageName, (string) $image->toWebp());
-
-        $camp->main_image = $imageName;
         $camp->save();
 
         return redirect()->route('admin.camps.index')->with('success', 'Stovykla sukurta sėkmingai!');
