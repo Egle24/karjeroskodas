@@ -30,7 +30,7 @@
     </div>
 </div>
 
-    <div class="container py-5">
+    <div class="container py-3">
         <div class="camps">
             <div class="headers mb-3">
             </div>
