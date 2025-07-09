@@ -296,7 +296,7 @@ $(document).ready(function() {
 
         if (selectedCampId) {
             $.ajax({
-                url: '/karjeroscode/camps/' + selectedCampId +'/data',
+                url: '/admin/camps/' + selectedCampId +'/data',
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {
