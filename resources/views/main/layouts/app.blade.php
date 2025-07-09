@@ -23,39 +23,31 @@
         <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.0/build/cookieconsent.min.js"></script>
 
     <script>
-        window.addEventListener("load", function() {
-    window.cookieconsent.initialise({
-        "palette": {
-            "popup": {
-                "background": "#000",
-                "font-family": "'Poppins', sans-serif",
-                "width": "80%",  // Set width to be smaller, not full width
-                "border-radius": "24px",  // Rounded corners
-                "box-shadow": "0 0 16px 0 rgba(0, 0, 0, 0.1)"  // Box shadow
-            },
-            "button": {
-                "background": "#110F6F",
-                "border-radius": "24px"  // Button with rounded corners
-            }
-        },
-        "theme": "classic",
-        "content": {
-                        "title": "Svetainės slapukai",  // Add the title here
-
-            "message": "<h5>Svetainės slapukai</h5>Mes naudojame slapukus, kad užtikrintume geriausią patirtį mūsų svetainėje.",
-            "dismiss": "Supratau!",
-            "link": "Skaityti daugiau",
-            "href": "/privatumo-politika",
-            "onStatusChange": function(status) {
-                if (status === 'allow') {
-                    document.cookie = "cookie_consent=true; path=/; max-age=31536000"; // 1 year
-                }
-            }
-        }
-    });
+        window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    palette: {
+      popup: {
+        background: "#000",
+        "font-family": "'Poppins', sans-serif",
+        width: "80%",
+        "border-radius": "24px",
+        "box-shadow": "0 0 16px 0 rgba(0, 0, 0, 0.1)"
+      },
+      button: {
+        background: "#110F6F",
+        "border-radius": "24px"
+      }
+    },
+    theme: "classic",
+    content: {
+      title: "Svetainės slapukai",
+      message: "<h5>Svetainės slapukai</h5>Mes naudojame slapukus, kad užtikrintume geriausią patirtį mūsų svetainėje.",
+      dismiss: "Supratau!",
+      link: "Skaityti daugiau",
+      href: "/privatumo-politika"
+    }
+  });
 });
     </script>
 </body>
 </html>
-
-
