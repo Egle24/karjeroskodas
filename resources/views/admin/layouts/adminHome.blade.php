@@ -2,9 +2,7 @@
 
 @section('title','Pagrindinis')
 @section('content')
-    <div class="container-fluid">
         <h2>Sveiki, {{ auth()->user()->name }}!</h2>
-
         <div class="row mt-4 cardRow">
             <div class="col-md-6 mb-3 cardColumn">
                 <div class="card text-white admin-card price">
@@ -143,5 +141,4 @@
                 </a>
             </div>
         </div>
-    </div>
 @endsection
