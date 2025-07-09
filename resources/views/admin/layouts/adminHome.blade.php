@@ -2,7 +2,7 @@
 
 @section('title','Pagrindinis')
 @section('content')
-    <div class="container-fluid px-5">
+    <div class="container-fluid">
         <h2>Sveiki, {{ auth()->user()->name }}!</h2>
 
         <div class="row mt-4 cardRow">
