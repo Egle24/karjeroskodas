@@ -36,7 +36,8 @@ class UserContactController extends Controller
                 'body' => $request->message
             ];
 
-            Mail::send(new ContactUs($mail_data));
+            Mail::to("egle.urbonaitee@gmail.com")->send(new ContactUs($mail_data));
+
 
             return redirect()->to(url()->previous() . '#form-anchor')->with('success', 'Laiškas sėkmingai išsiųstas!');
         } else {
