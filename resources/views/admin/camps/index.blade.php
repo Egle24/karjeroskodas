@@ -95,10 +95,10 @@
                                 <div class="card-body">
                                     <div class="row justify-content-center">
                                         <div class="col-md-3 d-flex justify-content-center align-items-center mb-3">
-                                            <div class="bigSquare">
+                                            <div class="smallSquare">
                                                 @if ($camp->main_image)
                                                     <img class="adminCampImage preview-image"
-                                                         src="{{ asset('storage/' . $camp->main_image) }}"
+                                                         src="{{ asset('storage/camp_images/' . $camp->main_image) }}"
                                                          alt="Camp image">
                                                 @else
                                                     <div class="avatar-placeholder">
@@ -272,7 +272,7 @@
                                     <div class="col-md-2">
                                         <div class="smallCircle">
                                             @if ($camp->main_image)
-                                                <img class="avatar" src="{{ asset('storage/' . $camp->main_image) }}"
+                                                <img class="avatar" src="{{ asset('storage/camp_images/' . $camp->main_image) }}"
                                                      alt="Profile Image">
                                             @else
                                                 <div class="avatar-placeholder">
