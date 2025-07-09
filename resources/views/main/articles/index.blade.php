@@ -28,7 +28,7 @@
             </form>
         </div>
     </div>
-    <div class="container py-5 px-2">
+    <div class="container py-3">
         <div id="noArticlesMessage" class="text-center" style="display: none;">
             <h4 class="p-4">Straipsnių šioje kategorijoje nėra</h4>
             <img src="{{ asset('/images/empty.png') }}" class="empty" alt="Empty Illustration">
