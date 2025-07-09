@@ -60,8 +60,8 @@ class CampController extends Controller
 
         ]);
 
-
-        $camp = Camp::create([
+        try {
+            $camp = Camp::create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'type' => $request->input('type'),
@@ -78,6 +78,14 @@ class CampController extends Controller
             'programme_id' => $request->input('programme_id'),
             'status' => $request->input('status')
         ]);
+        } catch (\Illuminate\Database\QueryException $e) {
+            if ($e->errorInfo[1] == 1062) {
+                return back()->withErrors(['slug' => 'Tokia stovykla jau egzistuoja.'])->withInput();
+            }
+        
+            throw $e; 
+        }
+        
 
         if ($request->hasFile('main_image')) {
             $imageFile = $request->file('main_image');
