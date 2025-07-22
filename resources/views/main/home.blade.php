@@ -135,9 +135,9 @@
                     <img src="{{ asset('/images/empty.png') }}" class="empty" alt="Empty Illustration">
                 </div>
             @else
-                <div class="row justify-content-start gap-4">
+                <div class="row justify-content-start">
                     @foreach($articles->sortByDesc('date')->take(2) as $article)
-                        <div class="col-lg-6 col-md-12">
+                        <div class="article_home col-lg-6 col-md-12">
                             <div class="article_card mb-3" style="border: 0">
                                 <div class="row m-0">
                                     <div class="col-md-4 article_image" style="background-image:url('{{ asset('storage/article_images/' . $article->image) }}');"></div>
