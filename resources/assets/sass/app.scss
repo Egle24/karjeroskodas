@@ -2379,9 +2379,7 @@ a.file-download:hover{
         width: 100% !important;
     }
 
-    .article_home {
-        padding-top: 12px;
-    }
+   
 
     form#categoryForm, form#statusForm  {
     text-align: center;
@@ -2490,6 +2488,11 @@ a.file-download:hover{
 
 @media (max-width: 1024px){
 
+
+     .article_home {
+        padding-top: 12px;
+    }
+    
     .map img{
         width: 100%;
     }
