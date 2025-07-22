@@ -22,6 +22,13 @@ class UserController extends Controller
         return view('admin.users.index', compact('users'));
     }
 
+    public function edit($id)
+{
+    $user = User::findOrFail($id);
+    $roles = Role::all();
+    return view('admin.users.edit', compact('user', 'roles'));
+}
+    
     public function create()
     {
         $roles = Role::all();
