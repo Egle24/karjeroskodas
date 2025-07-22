@@ -23,7 +23,7 @@ class UserRegistrationController extends Controller
     public function register(Request $request, Camp $camp)
     {
 
-        if (!Cookie::get('cookie_consent')) {
+        if (!request()->cookie('cookies_accepted')) {
             return redirect()->back()->with('error', 'Jūs turite sutikti su slapukais prieš užsiregistruojant į stovyklą.');
         }
 
