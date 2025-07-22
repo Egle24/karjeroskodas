@@ -9,6 +9,7 @@ use App\Models\UserCamps;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Cookie;
 
 class UserRegistrationController extends Controller
 {
