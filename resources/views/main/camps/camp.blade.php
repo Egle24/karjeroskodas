@@ -88,8 +88,8 @@
                             @foreach ($camp->programme->images as $image)
                                 <div class="col-md-6 mb-3">
                                     <div class="image-container">
-                                        <a href="{{ asset('storage/camp_images/' . $image->image_path) }}" data-lightbox="programme" data-title="{{ $image->title }}">
-                                            <img src="{{ asset('storage/camp_images/' . $image->image_path) }}" class="img-fluid rounded images" alt="{{ $image->title }}">
+                                        <a href="{{ asset('storage/' . $image->image_path) }}" data-lightbox="programme" data-title="{{ $image->title }}">
+                                            <img src="{{ asset('storage/' . $image->image_path) }}" class="img-fluid rounded images" alt="{{ $image->title }}">
                                         </a>
                                     </div>
                                 </div>
