@@ -20,6 +20,8 @@ h2, .h2 {
     font-size: calc(1.2rem + 1.3vw);
 }
 
+
+
 .hero{
     flex-direction: column;
     flex: 1;
@@ -2375,6 +2377,10 @@ a.file-download:hover{
 
     .postcard{
         width: 100% !important;
+    }
+
+    .article_home {
+        padding-top: 12px;
     }
 
     form#categoryForm, form#statusForm  {
