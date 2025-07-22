@@ -181,7 +181,7 @@
                         @endphp
                         @if ($camp)
                             <article class="postcard">
-                                <img src="{{ asset('storage/' . $camp->main_image) }}" alt="campImage" class="postcard__img">
+                                <img src="{{ asset('storage/camp_images/' . $camp->main_image) }}" alt="campImage" class="postcard__img">
                                 <div class="postcard__text">
                                     <h5 class="postcard__title headings">
                                         {{ $camp->title }}
