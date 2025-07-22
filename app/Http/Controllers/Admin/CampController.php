@@ -148,10 +148,11 @@ class CampController extends Controller
             'nullable',
             'integer',
             'min:0',
-            function ($attribute, $value, $fail) use ($camp) {
-                if ($value == 1 && !$camp->gallery()->exists()) {
-                    $fail('Galerija dar nesukurta šiai stovyklai. Sukurkite galeriją ir tuomet pakeiskite statusą.');
-                }
+            // In your update method, after the main validation:
+            if ($request->input('status') == 1 && !$camp->gallery()->exists()) {
+                return redirect()->back()
+                    ->with('warning', 'Stovykla pažymėta kaip praėjusi, bet galerija dar nesukurta. Rekomenduojame sukurti galeriją.')
+                    ->with('success', 'Stovykla atnaujinta sėkmingai');
             }
         ]
     ]);
