@@ -49,7 +49,7 @@ class UserRegistrationController extends Controller
         $userCamp->workplace = $request->input('workplace');
         $userCamp->invoice = $request->input('invoice');
         $userCamp->food_choice = $request->input('food_choice');
-        $userCamp->special_needs = $request->input('special_needs');
+        $userCamp->special_needs = $request->input('special_needs') ?: 'Nėra';
         $userCamp->paid = 'no';  // Automatically mark as paid or use 'no' if necessary
         $userCamp->save();
 
