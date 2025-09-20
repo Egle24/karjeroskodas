@@ -28,11 +28,15 @@ class GalleryController extends Controller
             'camp_id' => 'required|exists:camps,id',
             'title' => 'required|string',
             'description' => 'nullable|string',
-            'images' => 'required|array|min:1|max:10240',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif',
+            'images' => 'required|array|min:1',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:10240',
         ], [
             'camp_id.required' => 'Pasirinkite stovyklą.',
             'images.required' => 'Galerijoje turi būti bent viena nuotrauka.',
+            'images.min' => 'Galerijoje turi būti bent viena nuotrauka.',  // Custom error message for too few images
+            'images.*.image' => 'Kiekvienas failas turi būti nuotrauka.',  // Custom error message for invalid image file type
+            'images.*.mimes' => 'Nuotraukos turi būti JPEG, PNG, JPG, GIF arba WebP formatai.',  // Custom error message for invalid image file format
+            'images.*.max' => 'Kiekviena nuotrauka turi būti ne didesnė nei 10MB.',  // Custom error message for image size exceeding 10MB
         ]);
 
         $title = $request->input('title');
