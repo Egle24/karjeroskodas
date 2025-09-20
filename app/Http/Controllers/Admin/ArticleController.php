@@ -37,7 +37,7 @@ class ArticleController extends Controller
         // Validate the request data
         $request->validate([
             'article_title' => 'required|string|max:100',
-            'content' => 'required|string',
+            'content' => 'nullable|string',
             'content.*' => 'string',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:10000',
             'date' => 'required|date',
