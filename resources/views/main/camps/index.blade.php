@@ -53,7 +53,7 @@
                     <img src="{{ asset('storage/camp_images/' . $camp->main_image) }}" alt="campImage" class="postcard__img">
                     <div class="postcard__text">
                         <h5 class="postcard__title headings">
-                            "{{ $camp->title }}"
+                            {{ $camp->title }}
                         </h5>
                         <ul class="postcard__info">
                             <li class="tag__item">{{ \Carbon\Carbon::parse($camp->start_date)->format('Y-m-d') }} - {{ \Carbon\Carbon::parse($camp->end_date)->format('Y-m-d') }}</li>
