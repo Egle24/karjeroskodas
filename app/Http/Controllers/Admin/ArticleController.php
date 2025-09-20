@@ -36,7 +36,7 @@ class ArticleController extends Controller
     {
         // Validate the request data
         $request->validate([
-            'article_title' => 'required|string|max:100',
+            'article_title' => 'required|string|max:255',
             'content' => 'nullable|string',
             'content.*' => 'string',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:10000',
@@ -111,7 +111,7 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required|string|max:100',
+            'title' => 'required|string|max:255',
             'content' => 'required|string', // No need for JSON validation here
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:10000',
             'date' => 'required|date',
