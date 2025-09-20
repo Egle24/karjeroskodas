@@ -122,9 +122,11 @@ class ArticleController extends Controller
         ]);
     
         $article = Articles::findOrFail($id);
+        $slug = Str::slug($request->input('title'), '-');
     
         $article->update([
             'title' => $request->input('title'),
+            'slug' => $slug,
             'content' => $request->input('content'), // Store as raw HTML
             'date' => $request->input('date'),
             'link' => $request->input('link'),
