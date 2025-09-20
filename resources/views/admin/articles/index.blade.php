@@ -160,7 +160,6 @@
                                             </div>
                                         </div>
                                         <p class="card-text">
-                                            <a class="btn btn-primary" href="{{ route('articles.show', ['slug' => $article->slug]) }}" target="_blank">Skaityti straipsnį</a>
                                             <button class="btn btn-default fw-medium expand-btn"
                                                     data-attribute="article-id" data-id="{{ $article->id }}">
                                                 Plačiau <i class="bi bi-chevron-down"></i>
