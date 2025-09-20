@@ -13,6 +13,15 @@
         <div class="col-md-8" style="padding: 20px;">
             <div class="card">
                 <div class="card-body justify-content-center">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{ route('admin.articles.store') }}" method="POST" enctype="multipart/form-data" id="article-create-form">
                         @csrf
 
