@@ -66,9 +66,15 @@
                             $gallery = $camp->gallery;
                         @endphp
                         @if($camp->status == 1)
-                                <a href="{{ route('gallery.show', $gallery->slug ?? '') }}" class="btn btn-primary w-50">
-                                    Plačiau
-                                </a>
+                                 @if($camp->article) <!-- Check if the camp has an associated article -->
+                                    <a href="{{ route('articles.show', ['slug' => $camp->article->slug]) }}" class="btn btn-primary w-50">
+                                        Plačiau
+                                    </a>
+                                @else
+                                    <a href="{{ route('gallery.show', $gallery->slug ?? '') }}" class="btn btn-primary w-50">
+                                        Plačiau
+                                    </a>
+                                @endif
                             @else
                                 <a href="{{ route('camps.show', ['slug' => $camp->slug]) }}" class="btn btn-primary w-50">
                                     Plačiau
