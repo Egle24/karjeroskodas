@@ -26,9 +26,9 @@
                         @csrf
 
                         <div class="mb-3">
-                            <label for="title" class="form-label">Straipsnio pavadinimas</label>
-                            <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title">
-                            @error('title')
+                            <label for="article_title" class="form-label">Straipsnio pavadinimas</label>
+                            <input id="article_title" type="text" class="form-control @error('article_title') is-invalid @enderror" name="article_title" value="{{ old('article_title') }}" required autocomplete="title">
+                            @error('article_title')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
