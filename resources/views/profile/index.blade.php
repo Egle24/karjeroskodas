@@ -31,40 +31,7 @@
         <div class="tab-pane fade show active" id="profileInfo" role="tabpanel">
             <div class="card profile">
                 <div class="card-body">
-                    {{-- Your profile info content --}}
-                </div>
-            </div>
-        </div>
-
-        <!-- Mano stovyklos -->
-        <div class="tab-pane fade" id="userCamps" role="tabpanel">
-            <div class="card profile">
-                <div class="card-body">
-                    {{-- Your camps content --}}
-                </div>
-            </div>
-        </div>
-
-        <!-- Narystė -->
-        <div class="tab-pane fade" id="otherInfo" role="tabpanel">
-            <div class="card profile">
-                <div class="card-body">
-                    {{-- Your membership content --}}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-        <!-- Tab content -->
-        <div class="col-md-6 p-0">
-            <div class="tab-content" id="profile-tabContent">
-                <!-- Profilio informacija -->
-                <div class="tab-pane fade show active" id="profileInfo" role="tabpanel">
-                    <div class="card profile">
-                        <div class="card-body">
-                            
-                                <h3>{{ auth()->user()->name }} {{ auth()->user()->surname }}</h3>
+                    <h3>{{ auth()->user()->name }} {{ auth()->user()->surname }}</h3>
                                 <div class="bigCircle my-3">
                                     @if (auth()->user()->profile_image)
                                         <img class="avatar" src="{{ asset('storage/' . auth()->user()->profile_image) }}" alt="Profile Image">
@@ -112,16 +79,15 @@
                                 <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#updatePasswordModal">
                                     Keisti slaptažodį
                                 </a>
-                            
-                        </div>
-                    </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- Mano stovyklos -->
-                <div class="tab-pane fade" id="userCamps" role="tabpanel">
-                     <div class="card profile">
-                        <div class="card-body">
-                            @if ($userCamps->isNotEmpty())
+        <!-- Mano stovyklos -->
+        <div class="tab-pane fade" id="userCamps" role="tabpanel">
+            <div class="card profile">
+                <div class="card-body">
+                     @if ($userCamps->isNotEmpty())
                                 @foreach ($userCamps as $camp)
                                     @php $camp = \App\Models\Camp::find($camp->camp_id); @endphp
                                     @if ($camp)
@@ -142,12 +108,14 @@
                                 <p class="fw-medium">Jūs dar nesate užsiregistravę į stovyklas</p>
                                 <a href="{{ route('camps.index') }}" class="btn btn-primary">Peržiūrėti stovyklas</a>
                             @endif
-                        </div>
-                     </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- Narystė -->
-                <div class="tab-pane fade" id="otherInfo" role="tabpanel">
+        <!-- Narystė -->
+        <div class="tab-pane fade" id="otherInfo" role="tabpanel">
+            <div class="card profile">
+                <div class="card-body">
                     @php $userMemberships = auth()->user()->memberships()->get(); @endphp
                     @if ($userMemberships->isNotEmpty())
                         @foreach ($userMemberships as $membership)
@@ -179,6 +147,9 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
     </div>
 </div>
 
