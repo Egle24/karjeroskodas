@@ -47,7 +47,7 @@ class ArticleController extends Controller
             'camp_id' => 'nullable|exists:camps,id'
         ]);
 
-        $slug = Str::slug($request->input('title'), '-');
+        $slug = Str::slug($request->input('article_title'), '-');
 
 
         $article = Articles::create([
