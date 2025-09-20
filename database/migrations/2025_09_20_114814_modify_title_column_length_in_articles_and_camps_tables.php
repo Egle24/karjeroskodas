@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('articles_and_camps_tables', function (Blueprint $table) {
-            //
+        // Modify 'title' column in 'articles' table
+        Schema::table('articles', function (Blueprint $table) {
+            $table->string('title', 255)->change(); // Change to 255 characters
+        });
+
+        // Modify 'title' column in 'camps' table
+        Schema::table('camps', function (Blueprint $table) {
+            $table->string('title', 255)->change(); // Change to 255 characters
         });
     }
 
@@ -21,8 +27,14 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('articles_and_camps_tables', function (Blueprint $table) {
-            //
+        // Revert 'title' column in 'articles' table to 100 characters
+        Schema::table('articles', function (Blueprint $table) {
+            $table->string('title', 100)->change(); // Revert to 100 characters
+        });
+
+        // Revert 'title' column in 'camps' table to 100 characters
+        Schema::table('camps', function (Blueprint $table) {
+            $table->string('title', 100)->change(); // Revert to 100 characters
         });
     }
 };
