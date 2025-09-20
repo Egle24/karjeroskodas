@@ -146,16 +146,21 @@
     const form = document.querySelector('#article-create-form');
     const hiddenContent = document.querySelector('#content');
 
-    form.addEventListener('submit', function(event) {
-        const quillHtml = quill.root.innerHTML.trim();
-        const quillText = quill.getText().trim();
+     form.addEventListener('submit', function(event) {
+        const quillHtml = quill.root.innerHTML.trim();  // Get the HTML content
+        const quillText = quill.getText().trim();      // Get the plain text
 
-        // Save HTML into hidden input
+        // Save HTML into the hidden input field
         hiddenContent.value = quillHtml;
+
+        // Log the content to see if it's being populated
+        console.log('Quill HTML:', quillHtml);
+        console.log('Quill Text:', quillText);
+        console.log('Hidden content field value:', hiddenContent.value);  // Log the hidden input value
 
         // Optional: block empty submissions
         if (quillText.length === 0) {
-            event.preventDefault();
+            event.preventDefault();  // Prevent form submission
             alert('Straipsnio turinys negali būti tuščias.');
         }
     });
