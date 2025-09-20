@@ -85,6 +85,21 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="camp_id" class="form-label">Susijusi stovykla</label>
+                            <select id="camp_id" name="camp_id" class="form-select @error('camp_id') is-invalid @enderror">
+                                <option value="">Pasirinkite stovykla</option>
+                                @foreach($camps as $camp)
+                                <option value="{{ $camp->id }}" {{ old('camp_id') == $camp->id ? 'selected' : '' }}>{{ $camp->title }}</option>
+                                @endforeach
+                            </select>
+                            @error('camp_id')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
                             <label for="content-editor" class="form-label">Straipsnio turinys</label>
                             <div id="content-editor" style="height: 300px;"></div>
                             <input type="hidden" name="content" id="content">

@@ -35,8 +35,16 @@ class GalleryController extends Controller
             'images.required' => 'Galerijoje turi būti bent viena nuotrauka.',
         ]);
 
-        // Create a slug and ensure it's unique
-        $slug = Str::slug($request->input('title')) . '-karjeroskodas';
+        $title = $request->input('title');
+        $baseSlug = Str::slug($title);
+        $slug = $baseSlug;
+        $counter = 1;
+
+        // Check if the slug exists
+        while (Gallery::where('slug', $slug)->exists()) {
+            $slug = $baseSlug . '-' . $counter;
+            $counter++;
+        }
 
         $gallery = new Gallery([
             'title' => $request->input('title'),

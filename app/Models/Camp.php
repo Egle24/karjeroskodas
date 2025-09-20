@@ -58,6 +58,11 @@ class Camp extends Model
         return $this->hasOne(Gallery::class);
     }
 
+    public function articles()
+    {
+        return $this->hasMany(\App\Models\Articles::class);
+    }
+
     public function files()
     {
         return $this->hasMany(File::class);

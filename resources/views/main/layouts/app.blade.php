@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <title>@yield('title') | {{ config('app.name', 'Laravel') }} </title>
+    <meta name="description" content="@yield('description')">
     @include('main.layouts.head')
 </head>
 <body>

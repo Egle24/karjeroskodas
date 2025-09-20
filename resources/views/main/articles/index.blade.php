@@ -1,16 +1,16 @@
 @extends('main.layouts.app')
 
-@section('title','Straipsniai')
-
+@section('title','Istorijos ir akimirkos')
+@section('description', 'Atrask Karjeros Kodo tinklaraštį: čia dalinamės įdomiais straipsniais apie mūsų veiklą, partnerių įžvalgomis ir akimirkomis iš renginių.')
 @section('content')
     <div class="campContainer text-center py-6">
         <div class="textFrame w-70">
             <h1 class="text-white text-uppercase">
-                Naujausi straipsniai
+                Istorijos ir akimirkos
             </h1>
         </div>
     </div>
-    <div class="container py-5 px-2">
+    <div class="container py-4 px-2">
         <div id="categoryFormContainer">
             <form id="categoryForm">
                 <div class="custom-select-container">
@@ -28,7 +28,7 @@
             </form>
         </div>
     </div>
-    <div class="container py-3">
+    <div class="container py-3 px-2">
         <div id="noArticlesMessage" class="text-center" style="display: none;">
             <h4 class="p-4">Straipsnių šioje kategorijoje nėra</h4>
             <img src="{{ asset('/images/empty.png') }}" class="empty" alt="Empty Illustration">

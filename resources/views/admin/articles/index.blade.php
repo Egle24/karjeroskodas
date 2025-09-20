@@ -1,10 +1,10 @@
 @extends('admin.layouts.appAdmin')
 
-@section('title','Straipsniai')
+@section('title','Tinklaraštis')
 @section('content')
             <div class="row">
                 <div class="col-md-6">
-                    <h2 class="mb-0 text-start">Straipsniai</h2>
+                    <h1 class="mb-0 text-start">Tinklaraštis</h1>
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-end gap-2">
                     <div class="mr-3" style="white-space: nowrap;">{{ count($articles) }} articles</div>
@@ -148,10 +148,19 @@
                                                             Kategorija nepriskirta
                                                         @endif
                                                     </li>
+                                                    <li class="col-md-8 tag__item">
+                                                        <span class="fw-medium">Susijusi stovykla: </span>
+                                                        @if ($article->camp)
+                                                            {{ $article->camp->title }}
+                                                        @else
+                                                            Stovykla nepriskirta
+                                                        @endif
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <p class="card-text">
+                                            <a class="btn btn-primary" href="{{ route('articles.show', ['slug' => $article->slug]) }}" target="_blank">Skaityti straipsnį</a>
                                             <button class="btn btn-default fw-medium expand-btn"
                                                     data-attribute="article-id" data-id="{{ $article->id }}">
                                                 Plačiau <i class="bi bi-chevron-down"></i>
@@ -161,7 +170,9 @@
                                 </div>
                                 <div class="expanded-row" data-article-id="{{ $article->id }}" style="display: none;">
                                 <div class="row my-3">
-                                    {{ \Illuminate\Support\Str::limit(strip_tags($article->content)) }}
+                                    <div class="article-content">
+                                        {!! $article->content !!} <!-- This will display the content as HTML -->
+                                    </div>
                                 </div>
                                 </div>
                             </div>

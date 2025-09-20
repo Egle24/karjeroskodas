@@ -19,9 +19,9 @@
                             @method('PUT')
 
                             <div class="mb-3">
-                                <label for="title" class="form-label">Straipsnio pavadinimas</label>
-                                <input id="title" type="text" class="form-control @error('title') is-invalid @enderror"
-                                       name="title" value="{{ $article->title }}" required autocomplete="title">
+                                <label for="article_title" class="form-label">Straipsnio pavadinimas</label>
+                                <input id="article_title" type="text" class="form-control" name="title" 
+                                    value="{{ old('title', $article->title) }}" required>
                                 @error('title')
                                 <span class="alert-danger" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -30,16 +30,26 @@
                             </div>
 
 
-                            <div class="mb-3">
-                                <label for="image" class="form-label">Straipsnio pagrindinė nuotrauka</label>
-                                <input id="image" type="file" class="form-control @error('image') is-invalid @enderror"
-                                       name="image" accept="image/*">
-                                @error('image')
-                                <span class="alert-danger" role="alert">
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Straipsnio pagrindinė nuotrauka</label>
+
+                        @if($article->image)
+                            <div class="mb-2">
+                                <img src="{{ asset('storage/article_images/' . $article->image) }}" 
+                                    alt="Current Image" 
+                                    style="max-width: 200px; max-height: 150px; display:block;">
+                            </div>
+                        @endif
+
+                        <input id="image" type="file" 
+                            class="form-control @error('image') is-invalid @enderror"
+                            name="image" accept="image/*">
+                        @error('image')
+                        <span class="alert-danger" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                                @enderror
-                            </div>
+                        @enderror
+                    </div>
 
                             <div class="mb-3">
                                 <label for="category_id" class="form-label">Kategorija</label>
@@ -61,8 +71,8 @@
                             <div class="mb-3">
                                 <label for="date" class="form-label">Data</label>
                                 <input id="date" type="date" class="form-control @error('date') is-invalid @enderror"
-                                       name="date" value="{{ old('date') ?: now()->format('Y-m-d') }}" required
-                                       autocomplete="date">
+                                    name="date" value="{{ old('date', $article->date ? $article->date->format('Y-m-d') : '') }}" 
+                                    required autocomplete="date">
                                 @error('date')
                                 <span class="alert-danger" role="alert">
                             <strong>{{ $message }}</strong>
@@ -92,6 +102,24 @@
                                 <span class="alert-danger" role="alert">
         <strong>{{ $message }}</strong>
     </span>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="camp_id" class="form-label">Susijusi stovykla</label>
+                                <select id="camp_id" name="camp_id" class="form-select @error('camp_id') is-invalid @enderror">
+                                    <option value="">Pasirinkite stovykla</option>
+                                    @foreach($camps as $camp)
+                                        <option value="{{ $camp->id }}" 
+                                            {{ (old('camp_id', $article->camp_id) == $camp->id) ? 'selected' : '' }}>
+                                            {{ $camp->title }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @error('camp_id')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                 @enderror
                             </div>
 

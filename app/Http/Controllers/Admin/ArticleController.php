@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Articles;
 use App\Models\Category;
+use App\Models\Camp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -26,7 +27,8 @@ class ArticleController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.articles.partials.create', compact('categories'));
+         $camps = Camp::where('status', 1)->whereDoesntHave('articles')->get();
+         return view('admin.articles.partials.create', compact('categories','camps'));
     }
 
     // Store a new article
@@ -34,27 +36,29 @@ class ArticleController extends Controller
     {
         // Validate the request data
         $request->validate([
-            'title' => 'required|string|max:100',
+            'article_title' => 'required|string|max:100',
             'content' => 'required|string',
             'content.*' => 'string',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:10000',
             'date' => 'required|date',
             'link' => 'nullable|string|max:250',
             'status' => 'required|in:new,old',
-            'category_id' => 'nullable|exists:categories,id'
+            'category_id' => 'nullable|exists:categories,id',
+            'camp_id' => 'nullable|exists:camps,id'
         ]);
 
         $slug = Str::slug($request->input('title'), '-');
 
 
         $article = Articles::create([
-            'title' => $request->input('title'),
+            'title' => $request->input('article_title'),
             'slug' => $slug, // Add this line to insert the slug
             'content' => $request->input('content'), // Store as raw HTML
             'date' => $request->input('date'),
             'link' => $request->input('link'),
             'status' => $request->input('status'),
-            'category_id' => $request->input('category_id')
+            'category_id' => $request->input('category_id'),
+            'camp_id' => $request->input('camp_id') // add this
         ]);
 
 
@@ -95,8 +99,12 @@ class ArticleController extends Controller
     {
         $article = Articles::findOrFail($id);
         $categories = Category::all();
-
-        return view('admin.articles.edit', compact('article', 'categories'));
+        $camps = Camp::where('status', 1)
+        ->whereDoesntHave('articles', function($query) use ($article) {
+            $query->where('id', '!=', $article->id); // exclude other articles
+        })
+        ->get();
+        return view('admin.articles.edit', compact('article', 'categories', 'camps'));
     }
 
     // Update an existing article
@@ -109,7 +117,8 @@ class ArticleController extends Controller
             'date' => 'required|date',
             'link' => 'nullable|string|max:250',
             'status' => 'required|in:new,old',
-            'category_id' => 'required|exists:categories,id'
+            'category_id' => 'required|exists:categories,id',
+            'camp_id' => 'nullable|exists:camps,id'
         ]);
     
         $article = Articles::findOrFail($id);
@@ -120,7 +129,8 @@ class ArticleController extends Controller
             'date' => $request->input('date'),
             'link' => $request->input('link'),
             'status' => $request->input('status'),
-            'category_id' => $request->input('category_id')
+            'category_id' => $request->input('category_id'),
+            'camp_id' => $request->input('camp_id') // add this
         ]);
 
         if ($request->hasFile('image')) {

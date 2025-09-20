@@ -1,12 +1,13 @@
 @extends('main.layouts.app')
 
-@section('title','Renginiai')
+@section('title','Įvykę ir artėjantys renginiai')
+@section('description', 'Atraskite visus mūsų organizuojamus renginius: stovyklas, užsiėmimus, susitikimus ir specialias veiklas. Čia rasite informaciją apie būsimus ir jau įvykusius renginius.')
 
 @section('content')
     <div class="campContainer text-center py-6">
         <div class="textFrame w-70">
             <h1 class="text-white text-uppercase">
-            Renginiai
+            Įvykę ir artėjantys renginiai
             </h1>
         </div>
     </div>

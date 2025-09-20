@@ -23,8 +23,7 @@ class UserArticlesController extends Controller
     public function show($slug)
     {
         // Find the current article by slug
-        $article = Articles::where('slug', $slug)->firstOrFail();
-
+        $article = Articles::with('camp.gallery')->where('slug', $slug)->firstOrFail();
 
         $relatedArticles = Articles::where('id', '!=', $article->id)
             ->orderBy('date', 'desc')
@@ -39,6 +38,9 @@ class UserArticlesController extends Controller
         // Get the category of the current article
         $article_cat = $article->category_id;
 
+        $files = $article->camp->files ?? collect();
+        $gallery = $article->camp->gallery ?? null;
+
         // Fetch other articles from the same category, excluding the current one
         $articles = Articles::where('category_id', '!=', $article_cat)->get();
         $articles->transform(function ($article) {
@@ -47,7 +49,7 @@ class UserArticlesController extends Controller
         });
 
 
-        return view('main.articles.show', compact('article', 'articles', 'relatedArticles'));
+        return view('main.articles.show', compact('article', 'articles', 'relatedArticles', 'files','gallery'));
     }
 
     public function getRouteKeyName()

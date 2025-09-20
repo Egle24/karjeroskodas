@@ -29,9 +29,8 @@
         <div class="col-md-3 col-sm-6 col-lg-3 mb-3">
             <h5>Nuorodos</h5>
             <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="{{route('camps.index')}}" class="nav-link p-0 ">Stovyklos</a></li>
-                <li class="nav-item mb-2"><a href="{{route('articles.index')}}" class="nav-link p-0 ">Straipsniai</a></li>
-                <li class="nav-item mb-2"><a href="{{route('gallery.index')}}" class="nav-link p-0">Galerija</a></li>
+                <li class="nav-item mb-2"><a href="{{route('articles.index')}}" class="nav-link p-0 ">Tinklaraštis</a></li>
+                <li class="nav-item mb-2"><a href="{{route('camps.index')}}" class="nav-link p-0 ">Renginiai</a></li>
                 <li class="nav-item mb-2"><a href="{{route('feedback.index')}}" class="nav-link p-0 ">Atsiliepimai</a></li>
                 <li class="nav-item mb-2"><a href="{{route('contactForm')}}" class="nav-link p-0 ">Kontaktai</a></li>
             </ul>

@@ -177,7 +177,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="expanded-row" data-camp-id="{{ $camp->id }}" style="display: none;">
+                                    <div class="expanded-row" data-camp-id="{{ $camp->id }}" style="display: none;">        
                                         @if(!empty($camp->foodChoice) || !empty($camp->accommodation) || !empty($camp->clothing))
                                             <div class="row justify-content-center my-3">
                                                 <div class="col-md-3 mb-3">

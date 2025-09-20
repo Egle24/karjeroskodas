@@ -12,17 +12,17 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{(request()->is('admin/camps')) || (request()->is('admin/camps/programmes'))? 'active' : '' }}" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Stovyklos <i class="bi bi-chevron-down rotate-down" id="chevron-icon2"></i>
+                        Renginiai <i class="bi bi-chevron-down rotate-down" id="chevron-icon2"></i>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{ route('admin.camps.index') }}">Visos</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.camps.index') }}">Visi</a></li>
                         <li><a class="dropdown-item" href="{{ route('admin.camps.programmes.index') }}">Programos</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{(request()->is('admin/articles')) || (request()->is('admin/categories'))? 'active' : '' }}" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Straipsniai <i class="bi bi-chevron-down rotate-down" id="chevron-icon3"></i>
+                        Tinklaraštis <i class="bi bi-chevron-down rotate-down" id="chevron-icon3"></i>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{ route('admin.articles.index') }}">Visi</a></li>

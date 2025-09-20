@@ -9,16 +9,10 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" href="{{ route('home') }}">Pagrindinis</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ (request()->routeIs('articles.index')) ? 'active' : '' }}" href="{{ route('articles.index') }}">Straipsniai</a>
+                    <a class="nav-link {{ (request()->routeIs('articles.index')) ? 'active' : '' }}" href="{{ route('articles.index') }}">Tinklaraštis</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ (request()->routeIs('camps.index')) ? 'active' : '' }}" href="{{ route('camps.index') }}">Renginiai</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ (request()->routeIs('gallery.index')) ? 'active' : '' }}" href="{{ route('gallery.index') }}">Galerija</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ (request()->routeIs('feedback.index')) ? 'active' : '' }}" href="{{ route('feedback.index') }}">Atsiliepimai</a>

@@ -71,8 +71,6 @@
                     <i class="fi fi-rr-circle-2"></i>
                     <p>{{ $camp->audience }}</p>
                     </div>
-                    
-
                  </div>
             </div>
         </div>
