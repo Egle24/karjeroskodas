@@ -51,7 +51,7 @@
                     <div class="col-md-6">
                         <div class="row g-2">
                             <label for="start_date" class="form-label">{{ __('Pradžios data') }}</label>
-                            <input id="start_date" type="datetime-local" class="form-control @error('start_date') is-invalid @enderror" name="start_date" value="{{ old('start_date') }}">
+                            <input id="start_date" type="date" class="form-control @error('start_date') is-invalid @enderror" name="start_date" value="{{ old('start_date') }}">
                             @error('start_date')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -62,7 +62,7 @@
                     <div class="col-md-6">
                         <div class="row g-2">
                             <label for="end_date" class="form-label">{{ __('Pabaigos data') }}</label>
-                            <input id="end_date" type="datetime-local" class="form-control @error('end_date') is-invalid @enderror" name="end_date" value="{{ old('end_date') }}">
+                            <input id="end_date" type="date" class="form-control @error('end_date') is-invalid @enderror" name="end_date" value="{{ old('end_date') }}">
                             @error('end_date')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
