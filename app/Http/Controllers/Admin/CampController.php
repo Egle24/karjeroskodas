@@ -40,7 +40,7 @@ class CampController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'type' => 'required|in:stovykla,seminaras,projektas',
@@ -56,8 +56,10 @@ class CampController extends Controller
             'audience' => 'nullable|string',
             'programme_id' => 'nullable|numeric|min:0',
             'status' => 'nullable|integer|min:0',
-            'main_image' => 'nullable|image|mimes:jpeg,png,jpg,gif'
-
+            'main_image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+        ], [
+            'title.max' => 'Pavadinimas per ilgas, max 100 simbolių.',
+            'description.max' => 'Aprašymas per ilgas, sutrumpinkite jį.' 
         ]);
 
         try {
