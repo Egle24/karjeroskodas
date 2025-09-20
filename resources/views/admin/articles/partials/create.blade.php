@@ -27,7 +27,7 @@
 
                         <div class="mb-3">
                             <label for="article_title" class="form-label">Straipsnio pavadinimas</label>
-                            <input id="article_title" type="text" class="form-control @error('article_title') is-invalid @enderror" name="article_title" value="{{ old('article_title') }}" required autocomplete="title">
+                            <input id="article_title" type="text" class="form-control @error('article_title') is-invalid @enderror" name="article_title" value="{{ old('article_title') }}" required autocomplete="article_title">
                             @error('article_title')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
