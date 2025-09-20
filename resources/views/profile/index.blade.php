@@ -52,6 +52,7 @@
                             
                            
                                 <h5 class="card-title">Profilio informacija</h5>
+                                @if(auth()->user()->role === 'admin') 
                                 <form action="{{ route('profile.updateName') }}" method="POST" class="mb-3 d-flex align-items-center gap-2">
                                     @csrf
                                     <div class="row g-2 align-items-center">
@@ -68,6 +69,7 @@
                                         </div>
                                     </div>
                                 </form>
+                                @endif
 
                                 <p><strong>Rolė:</strong>
                                     @foreach(auth()->user()->roles as $role)
