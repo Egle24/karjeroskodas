@@ -56,7 +56,7 @@
                             "{{ $camp->title }}"
                         </h5>
                         <ul class="postcard__info">
-                            <li class="tag__item">{{ substr($camp->start_date, 0, 16) }} - {{ substr($camp->end_date, 0, 16) }}</li>
+                            <li class="tag__item">{{ \Carbon\Carbon::parse($camp->start_date)->format('Y-m-d') }} - {{ \Carbon\Carbon::parse($camp->end_date)->format('Y-m-d') }}</li>
                             <li class="tag__item">@auth {{ $camp->priceForMembers }} EUR @else {{ $camp->priceForGuests }} EUR @endauth</li>
                         </ul>
                         <p class="card-text">
